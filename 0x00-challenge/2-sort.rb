@@ -1,3 +1,9 @@
+###
+#
+#  Sort integer arguments (ascending)
+#
+###
+
 result = []
 ARGV.each do |arg|
     # skip if not integer
@@ -5,7 +11,7 @@ ARGV.each do |arg|
 
     # convert to integer
     i_arg = arg.to_i
-    
+
     # insert result at the right position
     is_inserted = false
     i = 0
@@ -14,7 +20,7 @@ ARGV.each do |arg|
         if result[i] < i_arg
             i += 1
         else
-            result.insert(i, i_arg)  # Changed i - 1 to i
+            result.insert(i, i_arg)
             is_inserted = true
             break
         end
