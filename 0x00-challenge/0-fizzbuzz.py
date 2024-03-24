@@ -29,11 +29,14 @@ def fizzbuzz(n):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) <= 1:
-        print("Missing number")
-        print("Usage: ./0-fizzbuzz.py <number>")
-        print("Example: ./0-fizzbuzz.py 89")
+    if len(sys.argv) != 2:
+        print("Usage: ./filename.py <number>")
         sys.exit(1)
 
-    number = int(sys.argv[1])
+    try:
+        number = int(sys.argv[1])
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
+        sys.exit(1)
+
     fizzbuzz(number)
